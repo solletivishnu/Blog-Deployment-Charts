@@ -14,17 +14,21 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: vishnu9/frontend:2.11
+          image: vishnu9/frontendd:8.0
           ports:
             - containerPort: 3000
           env:
             - name: REACT_APP_BASE_URL
-              value: "http://backend:5000/api"
+              value: "http://34.132.91.228:5000/api"
 
 
 
 
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fronte
 apiVersion: v1
 kind: Service
 metadata:
