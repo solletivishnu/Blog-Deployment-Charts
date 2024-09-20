@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: vishnu9/backend:1.11
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              value: "vishnu"
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              value: "qwerasdf"
+            - name: MONGO_DB
+              value: "blogdb"
+            - name: MONGO_HOST  # Corrected from MONFO_HOST to MONGO_HOST
+              value: "mongo"
+            - name: DB
+              value: "mongodb://vishnu:qwerasdf@mongo:27017/blogdb?authSource=admin"
+          volumeMounts:
+            - mountPath: /medusa
+              name: medusa-data
+      volumes:
+        - name: medusa-data
+          emptyDir: {}
+
+
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  labels: 
+    app: backend
+    name: backend
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+  selector:
+    app: backend
+
