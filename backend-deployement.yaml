@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: vishnu9/backend:1.11
+          image: vishnu9/backend:9.8
           ports:
             - containerPort: 5000
           env:
@@ -26,7 +26,7 @@ spec:
               value: "qwerasdf"
             - name: MONGO_DB
               value: "blogdb"
-            - name: MONGO_HOST  
+            - name: MONGO_HOST  # Corrected from MONFO_HOST to MONGO_HOST
               value: "mongo"
             - name: DB
               value: "mongodb://vishnu:qwerasdf@mongo:27017/blogdb?authSource=admin"
@@ -57,4 +57,3 @@ spec:
       protocol: TCP
   selector:
     app: backend
-
