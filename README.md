@@ -33,7 +33,7 @@
 
 # Frontend
 
-### Frontent Project Github URL : https://github.com/solletivishnu/Blog-frontend
+### Frontend Project Github URL : https://github.com/solletivishnu/Blog-frontend
 
 ### Frontend Website URL Deployed in GCP : http://34.135.127.120:3000/
 
