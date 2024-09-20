@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   backend:
-    image: vishnu9/backend:9.8
+    image: vishnu9/backend:1.11
     container_name: backend
     ports:
       - "5000:5000" 
@@ -19,7 +19,7 @@ services:
     depends_on:
       - mongo # Ensure MongoDB starts before the backend
   frontend:
-    image: vishnu9/frontend:8.0
+    image: vishnu9/frontend:2.11
     container_name: frontend
     ports:
       - "3000:3000"
