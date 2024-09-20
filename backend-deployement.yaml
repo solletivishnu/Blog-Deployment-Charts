@@ -26,15 +26,15 @@ spec:
               value: "qwerasdf"
             - name: MONGO_DB
               value: "blogdb"
-            - name: MONGO_HOST  # Corrected from MONFO_HOST to MONGO_HOST
+            - name: MONGO_HOST  
               value: "mongo"
             - name: DB
               value: "mongodb://vishnu:qwerasdf@mongo:27017/blogdb?authSource=admin"
           volumeMounts:
-            - mountPath: /medusa
-              name: medusa-data
+            - mountPath: /blog
+              name: blog-data
       volumes:
-        - name: medusa-data
+        - name: blog-data
           emptyDir: {}
 
 
