@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 5000
 
 # Set environment variables for production (these can also be passed via a .env file)
-# You can override these when you run the container
+
 ENV PORT=5000
 
 # Command to run the backend server
